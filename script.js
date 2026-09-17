@@ -181,10 +181,10 @@ document.getElementById('menuBtn').onclick = () => {
   document.getElementById('navLinks').classList.toggle('open');
 };
 
-/* ===== Contact Form → WhatsApp ===== */
+/* ===== Contact Form → WhatsApp (Simple) ===== */
 const form = document.getElementById('contactForm');
 const status = document.getElementById('formStatus');
-const WHATSAPP_NUMBER = "8801610426493"; // আপনার WhatsApp নম্বর (country code সহ, + ছাড়া)
+const WHATSAPP_NUMBER = "8801610426493"; // আপনার WhatsApp নম্বর
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -192,18 +192,15 @@ form.addEventListener('submit', (e) => {
   status.className = "form-status";
 
   const data = new FormData(form);
-  const name    = data.get('name')    || '';
-  const email   = data.get('email')   || '';
-  const subject = data.get('subject') || '';
-  const message = data.get('message') || '';
+  const message = (data.get('message') || '').trim();
 
-  const text =
-    `*📩 New Message from Portfolio*\n\n` +
-    `*👤 Name:* ${name}\n` +
-    `*📧 Email:* ${email}\n` +
-    `*📌 Subject:* ${subject}\n\n` +
-    `*💬 Message:*\n${message}`;
+  if (!message) {
+    status.textContent = "Please write a message first.";
+    status.classList.add('error');
+    return;
+  }
 
+  const text = `💬 *New Message from Portfolio*\n\n${message}`;
   const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
 
   window.open(url, '_blank');
