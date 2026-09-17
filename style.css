@@ -113,9 +113,9 @@ nav.scrolled{padding:12px 60px;background:rgba(7,7,15,.95)}
   animation:gradientMove 3s linear infinite;
 }
 @keyframes gradientMove{0%{background-position:0% center}100%{background-position:200% center}}
-.nav-links{display:flex;gap:30px;list-style:none}
+.nav-links{display:flex;gap:25px;list-style:none}
 .nav-links a{
-  color:var(--text);text-decoration:none;font-weight:500;font-size:.92rem;
+  color:var(--text);text-decoration:none;font-weight:500;font-size:.9rem;
   position:relative;transition:color .3s;
 }
 .nav-links a::after{
@@ -258,6 +258,31 @@ section{padding:120px 60px;position:relative}
 .info-item .label{font-size:.72rem;color:var(--muted);display:block}
 .info-item .value{font-size:.9rem;font-weight:500}
 
+/* Services (New) */
+.services-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;max-width:1100px;margin:0 auto;
+}
+.service-card{
+  background:var(--card);padding:35px 28px;border-radius:20px;
+  border:1px solid var(--border);text-align:center;
+  transition:all .4s cubic-bezier(.4,0,.2,1);position:relative;overflow:hidden;
+}
+.service-card::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(0,212,255,.06),rgba(168,85,247,.06));
+  opacity:0;transition:opacity .4s;
+}
+.service-card:hover::before{opacity:1}
+.service-card:hover{transform:translateY(-10px);border-color:var(--primary);box-shadow:0 20px 40px rgba(0,212,255,.15)}
+.service-icon{
+  font-size:2.5rem;color:var(--primary);margin-bottom:20px;
+  display:inline-block;transition:transform .4s;
+}
+.service-card:hover .service-icon{transform:scale(1.15) rotate(-5deg)}
+.service-card h4{font-size:1.15rem;margin-bottom:12px;position:relative}
+.service-card p{color:var(--muted);font-size:.9rem;line-height:1.7;position:relative}
+
 /* Timeline */
 .timeline{max-width:800px;margin:0 auto;position:relative;padding-left:40px}
 .timeline::before{
@@ -317,6 +342,31 @@ section{padding:120px 60px;position:relative}
 .lang-info{text-align:center;position:relative;z-index:1}
 .lang-info .name{font-size:1.1rem;font-weight:600;margin-bottom:4px}
 .lang-info .level{font-size:.72rem;color:var(--primary);letter-spacing:2px;text-transform:uppercase}
+
+/* Projects (New) */
+.projects-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:30px;max-width:1100px;margin:0 auto;
+}
+.project-card{
+  background:var(--card);border-radius:20px;overflow:hidden;
+  border:1px solid var(--border);transition:all .4s;
+}
+.project-card:hover{transform:translateY(-10px);border-color:var(--primary);box-shadow:0 20px 50px rgba(0,212,255,.15)}
+.project-img{
+  height:180px;background:linear-gradient(135deg,rgba(0,212,255,.1),rgba(168,85,247,.1));
+  display:flex;align-items:center;justify-content:center;
+  font-size:3.5rem;color:var(--primary);transition:transform .4s;
+}
+.project-card:hover .project-img{transform:scale(1.05)}
+.project-info{padding:25px}
+.project-info h4{font-size:1.15rem;margin-bottom:10px}
+.project-info p{color:var(--muted);font-size:.9rem;line-height:1.7;margin-bottom:15px}
+.project-tags{display:flex;gap:8px;flex-wrap:wrap}
+.tag{
+  padding:5px 14px;border-radius:50px;font-size:.75rem;font-weight:600;
+  background:rgba(0,212,255,.1);color:var(--primary);border:1px solid rgba(0,212,255,.2);
+}
 
 /* Hobbies */
 .hobbies-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:25px;max-width:1000px;margin:0 auto}
@@ -426,23 +476,4 @@ footer .heart{color:var(--accent);animation:beat 1.2s infinite;-webkit-text-fill
   nav.scrolled{padding:12px 20px}
   .nav-links{
     position:fixed;top:70px;left:0;width:100%;
-    flex-direction:column;gap:0;background:var(--bg);
-    padding:20px 0;transform:translateY(-150%);
-    transition:transform .4s;backdrop-filter:blur(20px);
-    border-bottom:1px solid var(--border);
-  }
-  .nav-links.open{transform:translateY(0)}
-  .nav-links li{padding:14px 30px;border-bottom:1px solid var(--border)}
-  .menu-btn{display:block}
-  section{padding:90px 20px}
-  .about-content{grid-template-columns:1fr;gap:50px}
-  .avatar-ring{width:220px;height:220px}
-  .avatar-wrap::before{width:260px;height:260px}
-  .avatar-wrap::after{width:290px;height:290px}
-  .skills-grid{grid-template-columns:1fr}
-  .info-grid{grid-template-columns:1fr}
-  .form-row{grid-template-columns:1fr}
-  body{cursor:auto}
-  .cursor-glow,.cursor-dot{display:none}
-  .lang-circle{width:150px;height:150px}
-                         }
+    flex-direction:column;gap:0;
