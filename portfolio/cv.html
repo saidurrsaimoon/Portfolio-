@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV · MD. Saidur Rohoman Saimoon</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{--bg:#07070f;--card:#111124;--primary:#00d4ff;--secondary:#a855f7;--text:#eaeaea;--muted:#8b8ba7}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);
+  min-height:100vh;display:flex;align-items:center;justify-content:center;
+  padding:20px;
+  background:linear-gradient(45deg,#07070f,#15152e,#07070f);
+  background-size:400% 400%;animation:bg 15s ease infinite;
+}
+@keyframes bg{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+
+.lock-box{
+  background:var(--card);padding:50px 40px;border-radius:24px;
+  max-width:420px;width:100%;text-align:center;
+  border:1px solid rgba(0,212,255,.2);
+  box-shadow:0 30px 60px rgba(0,0,0,.5);
+  animation:pop .5s ease;
+}
+@keyframes pop{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}
+.lock-icon{
+  width:80px;height:80px;border-radius:50%;
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  display:flex;align-items:center;justify-content:center;
+  font-size:2rem;color:#000;margin:0 auto 25px;
+  animation:pulse 2s infinite;
+}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(0,212,255,.6)}50%{box-shadow:0 0 0 25px rgba(0,212,255,0)}}
+.lock-box h2{font-size:1.5rem;margin-bottom:10px;font-family:'Space Grotesk',sans-serif}
+.lock-box p{color:var(--muted);margin-bottom:30px;font-size:.9rem;line-height:1.6}
+.lock-box input{
+  width:100%;padding:15px 20px;border-radius:12px;
+  background:var(--bg);border:1px solid rgba(255,255,255,.1);
+  color:var(--text);font-family:inherit;font-size:1rem;
+  margin-bottom:15px;transition:all .3s;text-align:center;letter-spacing:2px;
+}
+.lock-box input:focus{outline:none;border-color:var(--primary);box-shadow:0 0 20px rgba(0,212,255,.25)}
+.lock-box button{
+  width:100%;padding:15px;border-radius:12px;border:none;
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  color:#000;font-weight:700;font-size:1rem;cursor:pointer;
+  font-family:inherit;transition:all .3s;
+}
+.lock-box button:hover{transform:translateY(-3px);box-shadow:0 15px 30px rgba(0,212,255,.4)}
+.error-msg{color:#ff2e63;font-size:.85rem;margin-top:12px;min-height:1.2rem}
+.back-link{display:inline-block;margin-top:25px;color:var(--muted);text-decoration:none;font-size:.85rem;transition:color .3s}
+.back-link:hover{color:var(--primary)}
+.shake{animation:shake .4s}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-10px)}75%{transform:translateX(10px)}}
+
+/* CV Content */
+.cv-container{
+  max-width:900px;width:100%;background:var(--card);
+  border-radius:24px;padding:50px 45px;
+  border:1px solid rgba(0,212,255,.15);
+  box-shadow:0 30px 60px rgba(0,0,0,.5);
+  animation:pop .6s ease;
+}
+.cv-header{
+  display:flex;gap:30px;align-items:center;
+  padding-bottom:30px;border-bottom:2px solid rgba(0,212,255,.15);
+  margin-bottom:30px;flex-wrap:wrap;
+}
+.cv-photo{
+  width:120px;height:120px;border-radius:50%;
+  object-fit:cover;border:4px solid var(--primary);
+  box-shadow:0 0 25px rgba(0,212,255,.4);
+}
+.cv-header-info h1{
+  font-family:'Space Grotesk',sans-serif;font-size:1.8rem;
+  background:linear-gradient(90deg,var(--primary),var(--secondary));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  margin-bottom:8px;
+}
+.cv-header-info p{color:var(--muted);font-size:.9rem;margin-bottom:5px}
+.cv-header-info p i{color:var(--primary);margin-right:8px;width:18px}
+.cv-section{margin-bottom:30px}
+.cv-section h3{
+  font-size:1.15rem;margin-bottom:15px;color:var(--primary);
+  font-family:'Space Grotesk',sans-serif;
+  display:flex;align-items:center;gap:10px;
+  padding-bottom:8px;border-bottom:1px dashed rgba(0,212,255,.2);
+}
+.cv-section p,.cv-section li{color:var(--muted);line-height:1.8;font-size:.92rem}
+.cv-section ul{list-style:none;padding-left:0}
+.cv-section ul li{padding-left:22px;position:relative;margin-bottom:6px}
+.cv-section ul li::before{
+  content:'▸';position:absolute;left:0;color:var(--primary);font-weight:bold;
+}
+.edu-table{width:100%;border-collapse:collapse;font-size:.85rem;margin-top:10px}
+.edu-table th,.edu-table td{
+  padding:12px;text-align:left;
+  border-bottom:1px solid rgba(255,255,255,.05);
+}
+.edu-table th{color:var(--primary);font-weight:600;font-size:.8rem;text-transform:uppercase;letter-spacing:1px}
+.edu-table td{color:var(--muted)}
+.download-btn{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:14px 30px;border-radius:50px;text-decoration:none;
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  color:#000;font-weight:700;font-size:.95rem;
+  transition:all .3s;margin-top:20px;
+}
+.download-btn:hover{transform:translateY(-3px);box-shadow:0 15px 30px rgba(0,212,255,.4)}
+@media(max-width:600px){
+  .cv-container{padding:30px 22px}
+  .cv-header{flex-direction:column;text-align:center}
+  .cv-header-info h1{font-size:1.4rem}
+  .lock-box{padding:40px 25px}
+  .edu-table{font-size:.75rem}
+  .edu-table th,.edu-table td{padding:8px 6px}
+}
+</style>
+</head>
+<body>
+
+<div id="lockScreen" class="lock-box">
+  <div class="lock-icon"><i class="fas fa-lock"></i></div>
+  <h2>Password Protected</h2>
+  <p>This CV is protected. Please enter the password to view and download it.</p>
+  <input type="password" id="pwd" placeholder="Enter password" autocomplete="off">
+  <button onclick="unlockCV()"><i class="fas fa-unlock"></i> Unlock CV</button>
+  <p class="error-msg" id="err"></p>
+  <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+</div>
+
+<div id="cvContent" class="cv-container" style="display:none">
+  <div class="cv-header">
+    <img src="images/profile.jpg" alt="Saidur" class="cv-photo">
+    <div class="cv-header-info">
+      <h1>MD. Saidur Rohoman Saimoon</h1>
+      <p><i class="fas fa-map-marker-alt"></i> Charfesson, Bhola, Barishal, Bangladesh</p>
+      <p><i class="fas fa-phone"></i> 01610426493</p>
+      <p><i class="fas fa-envelope"></i> saidur.r.saimoon@gmail.com</p>
+    </div>
+  </div>
+
+  <div class="cv-section">
+    <h3><i class="fas fa-bullseye"></i> Career Objective</h3>
+    <p>A motivated and responsible undergraduate student seeking opportunities to develop professional experience while applying my communication, computer, and problem-solving skills. I am eager to learn, work collaboratively, and contribute positively to an organization.</p>
+  </div>
+
+  <div class="cv-section">
+    <h3><i class="fas fa-graduation-cap"></i> Educational Qualifications</h3>
+    <table class="edu-table">
+      <thead>
+        <tr><th>Qualification</th><th>Institution</th><th>Group</th><th>Year</th><th>Result</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Honours (1st Year)</td><td>Barishal Government College</td><td>Soil Science</td><td>2025–2026</td><td>Studying</td></tr>
+        <tr><td>HSC</td><td>Charfesson Government College</td><td>Science</td><td>2025</td><td>GPA 3.08</td></tr>
+        <tr><td>SSC</td><td>Char Aicha Secondary School</td><td>Science</td><td>2023</td><td>GPA 4.56</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="cv-section">
+    <h3><i class="fas fa-user"></i> Personal Information</h3>
+    <ul>
+      <li><strong>Father's Name:</strong> Sala Uddin (Account Manager, BRAC, Charfesson)</li>
+      <li><strong>Mother's Name:</strong> Kanif Fatema (Housewife)</li>
+      <li><strong>Date of Birth:</strong> 25 January 2008</li>
+      <li><strong>Present Address:</strong> Charfesson, Bhola, Barishal, Bangladesh</li>
+    </ul>
+  </div>
+
+  <div class="cv-section">
+    <h3><i class="fas fa-star"></i> Skills</h3>
+    <ul>
+      <li>Communication and interpersonal skills</li>
+      <li>Basic computer operation and digital literacy</li>
+      <li>Basic programming knowledge</li>
+      <li>English &amp; Bangla typing — approximately 30 WPM</li>
+      <li>Microsoft Word, Excel and PowerPoint — basic/intermediate</li>
+      <li>Internet research and information handling</li>
+      <li>Email and online communication</li>
+      <li>Problem-solving and analytical thinking</li>
+      <li>Teamwork and collaboration</li>
+      <li>Time management and organizational skills</li>
+      <li>Adaptability and willingness to learn</li>
+      <li>Basic presentation and documentation skills</li>
+    </ul>
+  </div>
+
+  <div class="cv-section">
+    <h3><i class="fas fa-language"></i> Languages</h3>
+    <ul>
+      <li><strong>Bangla:</strong> Native</li>
+      <li><strong>English:</strong> Basic to intermediate communication and reading/writing</li>
+    </ul>
+  </div>
+
+  <div class="cv-section">
+    <h3><i class="fas fa-check-circle"></i> Declaration</h3>
+    <p>I hereby declare that the information provided above is true and correct to the best of my knowledge.</p>
+    <p style="margin-top:20px"><strong>Signature:</strong> MD. Saidur Rohoman Saimoon</p>
+  </div>
+
+  <div style="text-align:center;margin-top:40px">
+    <a href="MD_Saidur_Rohoman_Saimoon_CV-6.pdf" download class="download-btn">
+      <i class="fas fa-download"></i> Download CV (PDF)
+    </a>
+  </div>
+</div>
+
+<script>
+const CORRECT_PASSWORD = "Saimoon1234";
+
+function unlockCV(){
+  const input = document.getElementById('pwd');
+  const err = document.getElementById('err');
+  const box = document.querySelector('.lock-box');
+
+  if(input.value === CORRECT_PASSWORD){
+    document.getElementById('lockScreen').style.display = 'none';
+    document.getElementById('cvContent').style.display = 'block';
+    sessionStorage.setItem('cvUnlocked','true');
+    window.scrollTo({top:0,behavior:'smooth'});
+  } else {
+    err.textContent = "❌ Wrong password. Try again.";
+    box.classList.add('shake');
+    setTimeout(()=>box.classList.remove('shake'),500);
+    input.value = '';
+  }
+}
+
+document.getElementById('pwd').addEventListener('keypress', e => {
+  if(e.key === 'Enter') unlockCV();
+});
+
+if(sessionStorage.getItem('cvUnlocked') === 'true'){
+  document.getElementById('lockScreen').style.display = 'none';
+  document.getElementById('cvContent').style.display = 'block';
+}
+</script>
+</body>
+  </html>
